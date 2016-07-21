@@ -1,0 +1,11 @@
+{
+  "name":"$serviceName",
+  "label":"IBM MQ",
+  "plan":"free",
+  "tags":["mq"],
+  "credentials":{
+    "uri": "mq://$user:$password@$hostname1:$port1",
+    "queue_manager": "$queueManager",
+    "uris": [ "mq://$user:$password@$hostname1:$port1", "mq://$user:$password@$hostname2:$port2" ]
+  }
+}
