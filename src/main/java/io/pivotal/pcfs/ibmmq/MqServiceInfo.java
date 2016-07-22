@@ -9,7 +9,6 @@ import java.util.List;
 public class MqServiceInfo extends UriBasedServiceInfo {
 
     public static final String MQ_SCHEME = "mq";
-    public static final String MQS_SCHEME = "mqs";
 
     private String queueManager;
     private List<String> uris;

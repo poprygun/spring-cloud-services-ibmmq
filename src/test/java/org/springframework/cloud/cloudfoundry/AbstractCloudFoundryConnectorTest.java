@@ -1,4 +1,4 @@
-package io.pivotal.pcfs.ibmmq;
+package org.springframework.cloud.cloudfoundry;
 
 import java.io.InputStreamReader;
 import java.io.Reader;
@@ -12,6 +12,7 @@ import org.junit.Before;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import org.springframework.cloud.cloudfoundry.CloudFoundryConnector;
 import org.springframework.cloud.service.ServiceInfo;
 import org.springframework.cloud.service.UriBasedServiceInfo;
 import org.springframework.cloud.util.EnvironmentAccessor;

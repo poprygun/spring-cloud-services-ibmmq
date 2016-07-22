@@ -1,10 +1,13 @@
-package io.pivotal.pcfs.ibmmq;
+package org.springframework.cloud.cloudfoundry;
 
 
+import io.pivotal.pcfs.ibmmq.MqServiceInfo;
+import io.pivotal.pcfs.ibmmq.MqServiceInfoCreator;
 import org.junit.Test;
 import org.springframework.cloud.service.ServiceInfo;
 
 import java.util.List;
+import java.util.ServiceLoader;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.when;
@@ -14,6 +17,15 @@ public class CloudFoundryConnectorMqServiceTest extends AbstractCloudFoundryConn
     private String queueManager = "qManager-1";
     private String userName = "user123";
     private String pwd = "pwd123";
+
+    @Test
+    public void loadService() throws Exception {
+        ServiceLoader serviceLoader =
+                ServiceLoader.load(MqServiceInfoCreator.class);
+        for (Object cpService : serviceLoader) {
+            cpService.toString();
+        }
+    }
 
     @Test
     public void mqServiceCreationMultipleUris() {

@@ -6,17 +6,20 @@ import org.springframework.cloud.cloudfoundry.Tags;
 
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class MqServiceInfoCreator extends CloudFoundryServiceInfoCreator<MqServiceInfo> {
     public MqServiceInfoCreator() {
-        super(new Tags("mq"), MqServiceInfo.MQ_SCHEME, MqServiceInfo.MQS_SCHEME);
+        super(new Tags(), MqServiceInfo.MQ_SCHEME);
     }
 
+    private static Logger logger = Logger.getLogger(MqServiceInfoCreator.class.getName());
+
     @SuppressWarnings("unchecked")
-    public MqServiceInfo createServiceInfo(Map<String,Object> serviceData) {
-        Map<String,Object> credentials = getCredentials(serviceData);
+    public MqServiceInfo createServiceInfo(Map<String, Object> serviceData) {
+        Map<String, Object> credentials = getCredentials(serviceData);
 
         String id = getId(serviceData);
 
@@ -42,6 +45,7 @@ public class MqServiceInfoCreator extends CloudFoundryServiceInfoCreator<MqServi
         while (m.find()) {
             return m.group(1);
         }
+        //todo fix flow here
         return null;
     }
 }

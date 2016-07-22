@@ -6,11 +6,16 @@
 
     <groupId>io.pivotal.pcfs</groupId>
     <artifactId>spring-cloud-services-ibmmq</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.3-SNAPSHOT</version>
     <dependencies>
 
         <!-- IBM Dependencies -->
         <!-- https://mvnrepository.com/artifact/javax.jms/javax.jms-api -->
+        <dependency>
+            <groupId>com.ibm</groupId>
+            <artifactId>msg.client.commonservices</artifactId>
+            <version>7.0.1.3</version>
+        </dependency>
         <dependency>
             <groupId>com.ibm</groupId>
             <artifactId>msg.client.provider</artifactId>
